@@ -1,0 +1,173 @@
+{
+  "info": {
+    "_postman_id": "983fdabe-5168-4153-9459-9b84f05ec129",
+    "name": "BAP : Fabric Devkit",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32536226",
+    "_collection_link": "https://go.postman.co/collection/32536226-983fdabe-5168-4153-9459-9b84f05ec129?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "discover",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"context\": {\n        \"version\": \"{{version}}\",\n        \"action\": \"discover\",\n        \"timestamp\": \"{{$isoTimestamp}}\",\n        \"messageId\": \"{{$guid}}\",\n        \"transactionId\": \"{{$randomUUID}}\",\n        \"bapId\": \"{{bapId}}\",\n        \"bapUri\": \"{{bapUri}}\",\n        \"ttl\": \"PT30S\",\n        \"networkId\": \"{{networkId}}\",\n        \"schemaContext\": [\"\"]\n    },\n    \"message\": {\n        \"intent\": {}\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{bap_adapter_url}}/discover",
+          "host": [
+            "{{bap_adapter_url}}"
+          ],
+          "path": [
+            "discover"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "select",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"context\": {\n        \"version\": \"{{version}}\",\n        \"action\": \"select\",\n        \"timestamp\": \"{{$isoTimestamp}}\",\n        \"messageId\": \"{{$guid}}\",\n        \"transactionId\": \"{{$randomUUID}}\",\n        \"bapId\": \"{{bapId}}\",\n        \"bapUri\": \"{{bapUri}}\",\n        \"bppId\": \"{{bppId}}\",\n        \"bppUri\": \"{{bppUri}}\",\n        \"ttl\": \"PT30S\",\n        \"networkId\": \"{{networkId}}\"\n    },\n    \"message\": {\n        \"contract\": {}\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{bap_adapter_url}}/select",
+          "host": [
+            "{{bap_adapter_url}}"
+          ],
+          "path": [
+            "select"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "init",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"context\": {\n        \"version\": \"{{version}}\",\n        \"action\": \"init\",\n        \"timestamp\": \"{{$isoTimestamp}}\",\n        \"messageId\": \"{{$guid}}\",\n        \"transactionId\": \"{{$randomUUID}}\",\n        \"bapId\": \"{{bapId}}\",\n        \"bapUri\": \"{{bapUri}}\",\n        \"bppId\": \"{{bppId}}\",\n        \"bppUri\": \"{{bppUri}}\",\n        \"ttl\": \"PT30S\",\n        \"networkId\": \"{{networkId}}\"\n    },\n    \"message\": {\n        \"contract\": {}\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{bap_adapter_url}}/init",
+          "host": [
+            "{{bap_adapter_url}}"
+          ],
+          "path": [
+            "init"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "confirm",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"context\": {\n        \"version\": \"{{version}}\",\n        \"action\": \"confirm\",\n        \"timestamp\": \"{{$isoTimestamp}}\",\n        \"messageId\": \"{{$guid}}\",\n        \"transactionId\": \"{{$randomUUID}}\",\n        \"bapId\": \"{{bapId}}\",\n        \"bapUri\": \"{{bapUri}}\",\n        \"bppId\": \"{{bppId}}\",\n        \"bppUri\": \"{{bppUri}}\",\n        \"ttl\": \"PT30S\",\n        \"networkId\": \"{{networkId}}\"\n    },\n    \"message\": {\n        \"contract\": {}\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{bap_adapter_url}}/confirm",
+          "host": [
+            "{{bap_adapter_url}}"
+          ],
+          "path": [
+            "confirm"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "version",
+      "value": "2.0.0"
+    },
+    {
+      "key": "networkId",
+      "value": "beckn.one/testnet"
+    },
+    {
+      "key": "bapId",
+      "value": "bap.example.com"
+    },
+    {
+      "key": "bapUri",
+      "value": "http://onix-bap:8081/bap/receiver"
+    },
+    {
+      "key": "bppId",
+      "value": "bpp.example.com"
+    },
+    {
+      "key": "bppUri",
+      "value": "http://onix-bpp:8082/bpp/receiver"
+    },
+    {
+      "key": "bap_adapter_url",
+      "value": "http://localhost:8081/bap/caller"
+    },
+    {
+      "key": "bpp_adapter_url",
+      "value": "http://localhost:8082/bpp/caller"
+    }
+  ]
+}
